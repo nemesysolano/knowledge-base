@@ -1,0 +1,35 @@
+[
+    {
+        "id": "apple",    
+        "url": "http://www.apple.com",
+        "description": "Apple Inc",
+        "type": "article"
+    },
+    {
+        "id": "apple",    
+        "url": "http://www.apple.com",
+        "description": "Apple Inc (Think Different)",
+        "type": "article"
+    },
+    {
+        "id": "applesfera",    
+        "url": "https://www.applesfera.com",
+        "description": "Applesfera",
+        "type": "article",
+        "parentTopicId": "apple"
+    },
+    {
+        "id": "MacBookAir",    
+        "url": "https://www.applesfera.com/portatil/apple-macbook-air-m2-analisis-caracteristicas-precio-especificaciones",
+        "description": "MacBook Air M2",
+        "type": "article",
+        "parentTopicId": "applesfera"
+    },
+    {
+        "id": "MacStudio",    
+        "url": "https://www.applesfera.com/analisis/mac-studio-display-studio-analisis-caracteristicas-precio-especificaciones",
+        "description": "MacStudio Ultra",
+        "type": "article",
+        "parentTopicId": "applesfera"
+    }    
+]

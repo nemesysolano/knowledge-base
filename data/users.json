@@ -1,0 +1,20 @@
+[
+    {
+        "id": "john.doe",
+        "name": "John Doe",
+        "email": "john.doe@mail.com",
+        "role": "viewer",
+        "createdAt": "2025-01-01T00:00:00Z",
+        "apiKey": "jegsi483df3jdfjppjk438935",
+        "version": 1
+    },
+    {
+        "id": "jane.doe",
+        "name": "Jane Doe",
+        "email": "john.doe@mail.com",
+        "role": "viewer",
+        "createdAt": "2025-01-01T00:00:00Z",
+        "apiKey": "bybyrt475747545dfg44z009", 
+        "version": 1
+    }
+]
