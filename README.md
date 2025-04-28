@@ -19,7 +19,7 @@
 ---
 
 ## **GET /topics/:topic-id/:version**
-- **Description**: Retrieves a specific version of a topic by ID.
+- **Description**: Retrieves a specific version of a topic by ID. _It also searches subtopics recursively_.
 - **Authorization**: 
   - Viewer: ✅
 - **Responses**:
@@ -29,7 +29,7 @@
 ---
 
 ## **GET /topics/:topic-id**
-- **Description**: Retrieves the latest version of a topic by ID.
+- **Description**: Retrieves the latest version of a topic by ID.  _It also searches subtopics recursively_.
 - **Authorization**: 
   - Viewer: ✅
 - **Responses**:
