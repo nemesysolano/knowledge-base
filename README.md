@@ -3,8 +3,9 @@
 RESTful API for a Dynamic Knowledge Base System
 
 ### Notes:
+
+- Run `npx jest` to perfom unit tests` or `npm run-script start` to bootstrap the server.
 - All endpoints require an `Authorization` header with a valid API key. Valid API keys can be found in `data/users.json` file.
-- Run `npx jest` to perfom unit tests.
 - The sample `KB.postman_collection.json` postman collection is provided for performing manual tests. API keys are configured.
 
 ---
