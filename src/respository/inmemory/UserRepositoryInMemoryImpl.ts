@@ -11,12 +11,16 @@ export class UserRepositoryInMemoryImpl implements UserRepository {
 
 
     async findByApiKey(apiKey: string): Promise<User | null> {
-        const users = this.database.users[apiKey];
-        if(users && users.length > 0) {
-            return users[users.length - 1]; // Return the latest version
+        const versions = this.database.users || [];
+        const ids = Object.keys(versions)
+        const userIndex = Object.keys(versions).findIndex((key:string) => versions[key][versions[key].length - 1].apiKey === apiKey);
+        
+        if(userIndex === -1) {
+            return null;
         }
 
-        return null;
+        const key = ids[userIndex];
+        return versions[key][versions[key].length - 1];
     }
 
 }

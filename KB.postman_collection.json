@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "6b0467b6-bc0a-4d3b-80b6-a62dc2955bad",
+		"name": "KB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5873835",
+		"_collection_link": "https://speeding-crater-540232.postman.co/workspace/usb~6f753e68-807c-489a-b448-c93bf2c5ed49/collection/5873835-6b0467b6-bc0a-4d3b-80b6-a62dc2955bad?action=share&source=collection_link&creator=5873835"
+	},
+	"item": [
+		{
+			"name": "{{host}}/topics/ by ADMIN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jegsi483df3jdfjppjk438935",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"MacBookAir\",\n    \"url\": \"https://www.applesfera.com/portatil/apple-macbook-air-m2-analisis-caracteristicas-precio-especificaciones\",\n    \"description\": \"MacBook Air (Intel I5, 2019)\",\n    \"type\": \"article\",\n    \"parentTopicId\": \"applesfera\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/topics/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"topics",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/topics/ by Viewer",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bybyrt475747545dfg44z009",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"MacBookAir\",\n    \"url\": \"https://www.applesfera.com/portatil/apple-macbook-air-m2-analisis-caracteristicas-precio-especificaciones\",\n    \"description\": \"MacBook Air (Intel I3, 2018)\",\n    \"type\": \"article\",\n    \"parentTopicId\": \"applesfera\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/topics/",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"topics",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/topics/{id}/{version}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bybyrt475747545dfg44z009",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"apple\",    \n    \"url\": \"http://www.apple.com\",\n    \"description\": \"Apple Inc\",\n    \"type\": \"article\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/topics/apple/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"topics",
+						"apple",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/topics/{id}",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bybyrt475747545dfg44z009",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"apple\",    \n    \"url\": \"http://www.apple.com\",\n    \"description\": \"Apple Inc\",\n    \"type\": \"article\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/topics/apple",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"topics",
+						"apple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/topics/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"apple\",    \n    \"url\": \"http://www.apple.com\",\n    \"description\": \"Apple Inc\",\n    \"type\": \"article\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/topics/?Authorization=bybyrt475747545dfg44z009",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"topics",
+						""
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "bybyrt475747545dfg44z009"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

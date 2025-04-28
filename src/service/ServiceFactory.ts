@@ -1,6 +1,8 @@
-import { TopicRepository } from "../respository";
+import { TopicRepository, UserRepository } from "../respository";
+import { AuthorizationServiceImpl } from "./impl/AuthorizationServiceImpl";
 import { TopicServiceImpl } from "./impl/TopicServiceImpl";
 
 export const ServiceFactory ={
-    createToppicService: (topicRepository: TopicRepository) => new TopicServiceImpl(topicRepository)
+    createTopicService: (topicRepository: TopicRepository) => new TopicServiceImpl(topicRepository),
+    createAuthorizationService: (userRepository: UserRepository) => new AuthorizationServiceImpl(userRepository)
 }

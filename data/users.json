@@ -3,7 +3,7 @@
         "id": "john.doe",
         "name": "John Doe",
         "email": "john.doe@mail.com",
-        "role": "viewer",
+        "role": "admin",
         "createdAt": "2025-01-01T00:00:00Z",
         "apiKey": "jegsi483df3jdfjppjk438935",
         "version": 1

@@ -21,7 +21,6 @@ export class TopicRepositoryInMemoryImpl implements TopicRepository {
         const database = this.database;
         const topics = database.topics[topic.id] || [];
         const versionedTopic = { ...topic, id: topicId, version: topics.length + 1};        
-        
         this.validateTopic(topic, topicId);       
         database.topics[topic.id] = [...topics, versionedTopic];
         return versionedTopic;

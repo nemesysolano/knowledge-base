@@ -6,4 +6,5 @@ export interface TopicService {
     findById(id: string): Promise<FindTopicByIdResponse>;
     findByIdAndVersion(id: string, version: number): Promise<FindTopicByIdResponse>;
     findAll(): Promise<FindAllTopicsResponse>;
+    findDistanceBetweenTopics(topicId1: string, topicId2: string): Promise<number>;
 }

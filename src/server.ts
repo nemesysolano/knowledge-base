@@ -1,25 +1,20 @@
 import express from 'express';
 import { RepositoryFactory } from './respository';
 import { ServiceFactory } from './service';
-import { TopicController } from './controller';
-import { errorHandler } from './controller';
+import { ApplicationRouter, ErrorHandler, TopicController } from './controller';
 import "express-async-errors";
 import { connectToDatabase } from './db';
 
 const server = express();
-const port = 3000;
-const databaseUrl = process.argv[2];
+const databaseUrl = "./data"; //Must be a relative path to the data folder
 const database = connectToDatabase(databaseUrl);
+const topicService = ServiceFactory.createTopicService(RepositoryFactory.createTopicRepository(database));
+const authorizationService = ServiceFactory.createAuthorizationService(RepositoryFactory.createUserRepository(database));
+const topicController = new TopicController(topicService, authorizationService);
 
-const topicController = new TopicController(
-	ServiceFactory.createToppicService(
-		RepositoryFactory.createTopicRepository(database)
-	)
-);
 
 server.use(express.json());
-server.use(topicController.router());
-server.use(errorHandler)
-server.listen(port, () => {
-	console.log(`Server is running at http://localhost:${port}`);
-});
+server.use(ApplicationRouter(authorizationService, topicController));
+server.use(ErrorHandler())
+
+export default server;

@@ -70,6 +70,33 @@ export class TopicServiceImpl implements TopicService {
         
         return rootNode.subtopics;
     }
-     
+    
+    async traverseUpTree(topic: Topic, direction: number): Promise<number> {
+        let count = 0;
+        let currentTopic: Topic | null = topic;
+        
+        while (currentTopic !== null) {
+            count++;
+            console.log(count, currentTopic.id);
+            currentTopic = await this.topicRepository.findById(currentTopic!!.parentTopicId || '');
+        }
+        return count;
+    }
+
+    async findDistanceBetweenTopics(topicId1: string, topicId2: string): Promise<number> {
+        const topic1 = await this.topicRepository.findById(topicId1);
+        const topic2 = await this.topicRepository.findById(topicId2);
+
+        if ((topic1 === null || topic2 === null)) {
+            throw new ApplicationError('Either topicId1 or topicId2 does not exist', 404);
+        }
+
+        if(topicId1 === topicId2) {
+            return 0;
+        }
+
+        const distance = await this.traverseUpTree(topic1!!, 1) + await this.traverseUpTree(topic2!!, 2);
+        return distance;
+    }
 }
 
