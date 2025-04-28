@@ -1,4 +1,4 @@
-# API Endpoints Documentation
+# Knowledge Base
 
 RESTful API for a Dynamic Knowledge Base System
 
